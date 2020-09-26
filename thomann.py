@@ -22,10 +22,12 @@ if (len(thumbnailsList) > 0):
 
     #Create the folder to save the images in
     folderName = productName.replace(" ", "_")
-    folderLocation = os.path.join(os.getcwd(), folderName)
+    imageFolderLocation = os.path.join(os.getcwd(), "images")
+    if not os.path.exists(imageFolderLocation):
+        os.mkdir(imageFolderLocation)
+    folderLocation = os.path.join(imageFolderLocation, folderName)
     if not os.path.exists(folderLocation):
         os.mkdir(folderLocation)
-
 
     for thumbnail in thumbnailsList:
 
